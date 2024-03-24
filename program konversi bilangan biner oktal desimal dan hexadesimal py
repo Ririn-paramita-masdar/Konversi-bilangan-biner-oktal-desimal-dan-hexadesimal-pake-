@@ -1,0 +1,54 @@
+def dec_to_other(decimal, base):
+    if base == 2:
+        return bin(decimal)[2:]
+    elif base == 8:
+        return oct(decimal)[2:]
+    elif base == 16:
+        return hex(decimal)[2:]
+    else:
+        return "Base tidak valid"
+
+def other_to_dec(number, base):
+    if base == 2:
+        return int(number, 2)
+    elif base == 8:
+        return int(number, 8)
+    elif base == 16:
+        return int(number, 16)
+    else:
+        return "Base tidak valid"
+
+def main():
+    print("Program Konversi Bilangan")
+    print("1. Desimal ke Biner")
+    print("2. Desimal ke Oktal")
+    print("3. Desimal ke Heksadesimal")
+    print("4. Biner ke Desimal")
+    print("5. Oktal ke Desimal")
+    print("6. Heksadesimal ke Desimal")
+    choice = int(input("Masukkan pilihan Anda: "))
+
+    if choice in [1, 2, 3]:
+        decimal = int(input("Masukkan bilangan desimal: "))
+        if choice == 1:
+            base = 2
+        elif choice == 2:
+            base = 8
+        else:
+            base = 16
+        print("Hasil: ", dec_to_other(decimal, base))
+    elif choice in [4, 5, 6]:
+        number = input("Masukkan bilangan: ")
+        if choice == 4:
+            base = 2
+        elif choice == 5:
+            base = 8
+        else:
+            base = 16
+        print("Hasil: ", other_to_dec(number, base))
+    else:
+        print("Pilihan tidak valid.")
+
+if __name__ == "__main__":
+    main()=
+    
